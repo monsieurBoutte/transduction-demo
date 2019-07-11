@@ -28,7 +28,7 @@ const housesInBudget = collection => collection
   .map(shoutAddress);
 
 
-housesInBudget(homes); /*?.*/
+housesInBudget(homes);
 
 // imparitive for loop
 const imparitiveLoop = collection => {
@@ -49,8 +49,7 @@ const imparitiveLoop = collection => {
   return results;
 }
 
-imparitiveLoop(homes); /*?.*/
-
+imparitiveLoop(homes);
 // finding the average house price
 
 // method chaining w/ tail reduction
@@ -59,7 +58,7 @@ const sumOfHomes = homes
   .filter(hasEnoughBathrooms)
   .reduce(calculateSum, 0);
 
-const averagePrice = (sumOfHomes / homes.length).toFixed(2); //?
+const averagePrice = (sumOfHomes / homes.length).toFixed(2);
 
 const allInOneReducer = compose(
   filterTransducer(hasEnoughBathrooms),
@@ -75,4 +74,4 @@ const xForm = allInOneReducer(arrayPush);
 
 const myTransduction = collection => collection.reduce(xForm, []);
 
-myTransduction(homes); /*?.*/
+myTransduction(homes);

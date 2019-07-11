@@ -39,7 +39,7 @@ const ramdaTransduction = collection =>
     collection
   );
 
-console.log(ramdaTransduction(homes)); /*?.*/
+console.log(ramdaTransduction(homes));
 
 // #region early termination with Ramda
 const isNotTicking = x => x !== 'ticking';

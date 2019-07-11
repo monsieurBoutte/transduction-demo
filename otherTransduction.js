@@ -28,4 +28,4 @@ const otherTransduction = collection =>
     collection
   );
 
-otherTransduction(homes); // ?
+otherTransduction(homes);
