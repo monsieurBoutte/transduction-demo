@@ -33,7 +33,7 @@ const transformWithTap = R.compose(
 
 const ramdaTransduction = collection =>
   R.transduce(
-    transform,
+    transformWithTap,
     R.flip(R.append),
     [],
     collection
