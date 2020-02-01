@@ -2,21 +2,20 @@
 const calculateSum = (total, currentValue) => total + currentValue.price;
 
 // array reducer
-const arrayPush = (accumlator, currentValue) => {
-  accumlator.push(currentValue);
-  return accumlator;
+const arrayPush = (accumulator, currentValue) => {
+  accumulator.push(currentValue);
+  return accumulator;
 };
 
 // simple reducer example
-const reducer = (accumlator, currentValue) => {
-  // transformation or combination here
-  accumlator.push(currentValue);
+const reducer = (accumulator, currentValue) => {
+  accumulator.push(currentValue);
   // if (predicate(currentValue)) {
-  //  accumlator.push(currentValue);
+  //  accumulator.push(currentValue);
   // }
-  return accumlator;
+  return accumulator;
 };
-// collection.reduce(reducer, []);
+collection.reduce(reducer, []);
 
 const shoutAddress = obj => obj.address.toUpperCase();
 
@@ -27,5 +26,5 @@ module.exports = {
   shoutAddress,
   calculateSum,
   arrayPush,
-  compose,
+  compose
 };

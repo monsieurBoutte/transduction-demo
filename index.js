@@ -1,12 +1,7 @@
 //#region imports
 const { homes } = require('./mock/collection');
 const { mappingTransducer, filterTransducer } = require('./util/transducers');
-const {
-  shoutAddress,
-  calculateSum,
-  arrayPush,
-  compose
-} = require('./util');
+const { shoutAddress, calculateSum, arrayPush, compose } = require('./util');
 
 const {
   hasEnoughBathrooms,
@@ -19,19 +14,19 @@ const {
 //#endregion
 
 // map and filter chained transformation
-const housesInBudget = collection => collection
-  .filter(isInBudget(650000))
-  .filter(isBigEnough)
-  .filter(hasEnoughBedrooms)
-  .filter(hasEnoughBathrooms)
-  .filter(isNearMe)
-  .map(shoutAddress);
-
+const housesInBudget = collection =>
+  collection
+    .filter(isInBudget(650000))
+    .filter(isBigEnough)
+    .filter(hasEnoughBedrooms)
+    .filter(hasEnoughBathrooms)
+    .filter(isNearMe)
+    .map(shoutAddress);
 
 housesInBudget(homes);
 
-// imparitive for loop
-const imparitiveLoop = collection => {
+// imperative for loop
+const imperativeLoop = collection => {
   let results = [];
 
   for (let i = 0; i < collection.length; i++) {
@@ -47,9 +42,9 @@ const imparitiveLoop = collection => {
   }
 
   return results;
-}
+};
 
-imparitiveLoop(homes);
+imperativeLoop(homes);
 // finding the average house price
 
 // method chaining w/ tail reduction
@@ -72,6 +67,6 @@ const allInOneReducer = compose(
 // a transducer needs a final reducer passed into it, in this case (arrayPush)
 const xForm = allInOneReducer(arrayPush);
 
-const myTransduction = collection => collection.reduce(xForm, []);
+const filteredSearchTransduction = collection => collection.reduce(xForm, []);
 
-myTransduction(homes);
+filteredSearchTransduction(homes);
