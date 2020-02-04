@@ -3,16 +3,17 @@
 // filter transducer
 function filterTransducer(predicate) {
   // nextReducer also written as step
-  return nextReducer =>
-    (accumlator, currentValue) =>
-      predicate(currentValue) ? nextReducer(accumlator, currentValue) : accumlator;
-};
+  return nextReducer => (accumulator, currentValue) =>
+    predicate(currentValue)
+      ? nextReducer(accumulator, currentValue)
+      : accumulator;
+}
 
 // mapping transducer
 function mappingTransducer(fn) {
-  return nextReducer => (accumlator, currentValue) =>
-    nextReducer(accumlator, fn(currentValue));
-};
+  return nextReducer => (accumulator, currentValue) =>
+    nextReducer(accumulator, fn(currentValue));
+}
 
 module.exports = {
   mappingTransducer,
